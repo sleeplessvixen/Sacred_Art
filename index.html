@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Museum of Sacred Art and Devotion</title>
-
-  <link rel="stylesheet" type="text/css" href="https://sleeplessvixen.github.io/sacred-art/styles.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum of Sacred Art and Devotion</title>
+    <link rel="stylesheet" type="text/css" href="https://sleeplessvixen.github.io/sacred-art/styles.css">
 </head>
-
 <body>
-
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">MSAD</a>
@@ -23,8 +20,9 @@
             </div>
         </div>
     </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div>
             <h1>Museum of Sacred Art and Devotion</h1>
             <p>Exploring Divine Beauty Through Sacred Artifacts</p>
@@ -32,25 +30,29 @@
     </section>
 
     <!-- Intro Section -->
-    <section class="intro">
+    <section class="intro" id="about">
         <h2>Welcome to Our Collection</h2>
         <p>Discover our carefully curated collection of sacred artworks that span centuries of religious devotion and artistic mastery. Each piece tells a unique story of faith, craftsmanship, and spiritual significance.</p>
     </section>
 
     <!-- Items Section -->
-    <section class="items">
+    <section class="items" id="collection">
         <!-- Item 1 -->
         <div class="item">
             <h3>Christ and Saint John the Evangelist</h3>
             <p>This intimate portrayal captures the profound spiritual connection between Christ and his beloved disciple. The piece exemplifies the deep personal relationship described in the Gospel of John, where the disciple is often depicted resting his head on Jesus's shoulder.</p>
             <div class="image-gallery">
-                <img src="/api/placeholder/400/300" alt="Christ and Saint John view 1">
-                <img src="/api/placeholder/400/300" alt="Christ and Saint John view 2">
-                <img src="/api/placeholder/400/300" alt="Christ and Saint John view 3">
+                <img src="christ-john-view-1.jpg" alt="Christ and Saint John view 1">
+                <img src="christ-john-view-2.jpg" alt="Christ and Saint John view 2">
+                <img src="christ-john-view-3.jpg" alt="Christ and Saint John view 3">
             </div>
             <div class="model-viewer">
-                <!-- model-viewer element will be added here -->
-                <p>3D Model Placeholder</p>
+                <model-viewer src="christ-john-3d.glb" 
+                            alt="3D model of Christ and Saint John"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                </model-viewer>
             </div>
         </div>
 
@@ -59,13 +61,17 @@
             <h3>Enthroned Virgin with the Writing Christ Child</h3>
             <p>This remarkable piece depicts the Virgin Mary seated on a throne with the Christ Child engaged in the act of writing. This unique iconographic representation symbolizes divine wisdom, while the depiction of the young Jesus learning to write adds a touching human dimension to this sacred scene.</p>
             <div class="image-gallery">
-                <img src="/api/placeholder/400/300" alt="Enthroned Virgin view 1">
-                <img src="/api/placeholder/400/300" alt="Enthroned Virgin view 2">
-                <img src="/api/placeholder/400/300" alt="Enthroned Virgin view 3">
+                <img src="virgin-child-view-1.jpg" alt="Enthroned Virgin view 1">
+                <img src="virgin-child-view-2.jpg" alt="Enthroned Virgin view 2">
+                <img src="virgin-child-view-3.jpg" alt="Enthroned Virgin view 3">
             </div>
             <div class="model-viewer">
-                <!-- model-viewer element will be added here -->
-                <p>3D Model Placeholder</p>
+                <model-viewer src="virgin-child-3d.glb"
+                            alt="3D model of Enthroned Virgin"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                </model-viewer>
             </div>
         </div>
 
@@ -74,31 +80,63 @@
             <h3>Vesperbild (Pietà)</h3>
             <p>The Vesperbild, also known as Pietà, depicts the poignant moment where the Virgin Mary holds the body of Christ after the Crucifixion. This deeply moving representation of maternal grief and divine sacrifice was a popular devotional image in medieval European art.</p>
             <div class="image-gallery">
-                <img src="/api/placeholder/400/300" alt="Pieta view 1">
-                <img src="/api/placeholder/400/300" alt="Pieta view 2">
-                <img src="/api/placeholder/400/300" alt="Pieta view 3">
+                <img src="pieta-view-1.jpg" alt="Pieta view 1">
+                <img src="pieta-view-2.jpg" alt="Pieta view 2">
+                <img src="pieta-view-3.jpg" alt="Pieta view 3">
             </div>
             <div class="model-viewer">
-                <!-- model-viewer element will be added here -->
-                <p>3D Model Placeholder</p>
+                <model-viewer src="pieta-3d.glb"
+                            alt="3D model of Pieta"
+                            camera-controls
+                            auto-rotate
+                            shadow-intensity="1">
+                </model-viewer>
             </div>
         </div>
     </section>
 
-
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Visit Us</h2>
+        <div class="contact-info">
+            <p>Open Tuesday - Sunday</p>
+            <p>10:00 AM - 5:00 PM</p>
+            <p>123 Art Museum Way</p>
+            <p>City, Country</p>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Museum of Sacred Art and Devotion. All rights reserved.</p>
     </footer>
-</body>
-<script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
 
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
-</script>
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    </script>
+    
+    <!-- Model Viewer Script -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
 </html>
