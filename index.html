@@ -72,9 +72,20 @@
         </div>
     </section>
 
+
+
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Museum of Sacred Art and Devotion. All rights reserved.</p>
     </footer>
 </body>
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+</script>
 </html>
